@@ -4,19 +4,19 @@
 }
 
 .crud {
-display: grid;
-grid-template-rows: 0.1fr 0.1fr 0.2fr 1fr;
-grid-template-columns: 1fr;
-/* background-color: #fde9f2; */
-/* background-image: url(/PROYECTO2CRUDAPP/public/assets/img/BlueTrianglePattern.jpg); */
-background-repeat: no-repeat;
-background-size: cover;
-padding-bottom: 40px;
+    display: grid;
+    grid-template-rows: 0.1fr 0.1fr 0.2fr 1fr;
+    grid-template-columns: 1fr;
+    /* background-color: #fde9f2; */
+    /* background-image: url(/PROYECTO2CRUDAPP/public/assets/img/BlueTrianglePattern.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40px;
 }
 
 .titulocrud {
     text-align: center;
-    color: rgb(100, 100, 114,);
+    color: rgb(100, 100, 114, );
 
 }
 
@@ -31,16 +31,16 @@ padding-bottom: 40px;
 
 .formucrud {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px 50px 40px;
-    margin-left: 30px;
-    margin-right: 30px;
     padding: 10px;
     grid-gap: 15px;
     border: solid 2px rgb(42, 177, 132);
     border-radius: 10px;
     height: fit-content;
+    width: fit-content;
     background-color: rgb(220, 248, 239);
+    justify-self: center;
 }
 
 #fechainput {
@@ -75,16 +75,19 @@ padding-bottom: 40px;
     transition: transform 0.6s;
     margin-bottom: 15px;
 }
-.titulocrud{
-    /* background-image: url(/PROYECTO2CRUDAPP/public/assets/img/ShellHandwritingCanvas.jpg); */
+
+.titulocrud {
 }
-.botonadd:hover{
-cursor: pointer;   
-transform: scale(1.1); 
+
+.botonadd:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
-.hidden{
+
+.hidden {
     display: none;
 }
+
 .botonEnviar {
     background-color: aquamarine;
     background-image: url(/PROYECTO2CRUDAPP/public/assets/img/save.png);
@@ -122,25 +125,109 @@ transform: scale(1.1);
     /* Por defecto, oculta el mensaje de validación */
 }
 
-    /* Estilos a la tabla del Crud */
-    .crudtable {
-        width: 80%;
-        border-collapse: collapse;
+/* Estilos a la tabla del Crud */
+.crudtable {
+    width: 80%;
+    border-collapse: collapse;
+    justify-self: center;
+    margin-top: 50px;
+}
+
+.table_body td {
+
+    padding: 5px;
+    border: solid 0.25px #f6900b;
+    background-color: #fff6e9;
+
+}
+
+.table_header {
+    padding: 6px;
+    background-color: #FFC273;
+    border: solid 0.25px #f6900b;
+}
+
+@media screen and (max-width: 800px) {
+    .contenedor {
+        padding: 10px;
+    }
+
+    .titulocrud {
+        text-align: center;
+        color: rgb(100, 100, 114, );
+        width: 300px;
         justify-self: center;
-        margin-top: 50px;
     }
 
+    .formucrud {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: fit-content;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
-    .table_body td {
-        
+    input {
+        width: auto;
+    }
+
+    .crud {
+        display: grid;
+        width: 5vw;
+        grid-template-rows: 0.1fr max-content 0.2fr 1fr;
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+    }
+
+    td {
+        font-size: 2vw;
+    }
+
+    th {
+        font-size: 2vw;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+    .botonadd{
+        margin-bottom: 0px;
+    }
+
+    .button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .botonEnviar {
+        grid-area: 3 / 3 / 4 / 4;
+        width: 100%;
+    }
+
+    .formInput {
+        flex: 1;
         padding: 5px;
-        border: solid 0.25px #f6900b;
-background-color: #fff6e9;
-        
+        font-size: 1rem;
+        border-radius: 4px;
+        border: solid 0.25px rgb(42, 177, 132);
     }
 
-    .table_header {
-        padding: 6px;
-        background-color: #FFC273;
-        border: solid 0.25px #f6900b;
+    .crudtable {
+        max-width: 700px;
     }
+
+    .table_header .td {
+        font-size: 1vw;
+        height: 1vw;
+        width: 1vw;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

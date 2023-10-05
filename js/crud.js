@@ -1,12 +1,13 @@
 
 const botonAdd=document.getElementById("botonAdd")
 const ocultarFormulario =document.getElementById("formRegistro")
-
+const botonguarda=document.getElementById('submitbutton')
 function togglemenu() {
    ocultarFormulario.classList.toggle('hidden')
 }
 
 botonAdd.addEventListener("click",togglemenu);
+ocultarFormulario.style.opacity = '1';
 
 
 
