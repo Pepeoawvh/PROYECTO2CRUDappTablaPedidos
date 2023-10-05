@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Borel&family=Cinzel:wght@400;500;600;700;800;900&family=Merriweather:wght@300&family=Quicksand:wght@300;400;500;600;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+    <script type="text/javascript"></script>
+    <title>CRUD PP</title>
+
+</head>
+
+<body>
+    <main class="contenedor">
+        <section class="crud">
+            <h1 class="titulocrud">Registro de Pedidos de Stock</h1>
+
+            <!-- Formulario 1 Pedidos stock, etiquetas con id -->
+            <form id="formRegistro" class="formucrud">
+                <select place id="entradainput" class="formInput">
+                    <option style="color: rgb(176, 176, 176);" value="">Origen del pedido</option>
+                    <option value="Web">Web</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+                <input type="date" id="fechainput" class="formInput">
+                <input type="text" placeholder="Número de Pedido"id="codigoinput" class="formInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <input type="text" placeholder="Nombre Cliente" id="nameinput" class="formInput" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');">
+                <input type="number" placeholder="Cantidad" id="numinput" class="formInput">
+                <input type="text" placeholder="Producto" id="productinput" class="formInput">
+                <select place id="envioinput" class="formInput">
+                    <option style="color: rgb(176, 176, 176);" value="" class="formInput">Metodo de envio</option>
+                    <option>BlueExpress Pagado</option>
+                    <option>Bluexpress Por Pagar</option>
+                    <option>Bluexpress Por Pagar</option>
+                    <option>M&M RM</option>
+                    <option>M&M Local</option>
+                    <option>STARKEN</option>
+                    <option>Chilexpress Pagado</option>
+                    <option>Retiro en Taller</option>
+                </select>
+                <select place id="facturainput" class="formInput">
+                    <option style="color: rgb(176, 176, 176);" value="">Facturacion</option>
+                    <option>FACTURA</option>
+                    <option>BOLETA</option>
+                </select>
+
+                <!-- Este botón tiene una clase general "button" y agregamos modificadores como button--primary -->
+                <button type="submit" id="submitbutton" class="button botonEnviar">
+                     <!-- <img src="./public/assets/img/save.png" alt="send">  -->
+                    </button>
+            </form>
+
+            <div id="mensajeValidacion" class="mensaje-validacion"></div>
+            <!-- Creamos una tabla para que se visualicen los datos -->
+            <table class="crudtable">
+                <thead>
+                    <tr>
+                        <th class="table_header">Origen</th>
+                        <th class="table_header">Fecha</th>
+                        <th class="table_header">Codigo de Pedido</th>
+                        <th class="table_header">Cliente</th>
+                        <th class="table_header">Cantidad</th>
+                        <th class="table_header">Detalle de pedido</th>
+                        <th class="table_header">Envio</th>
+                        <th class="table_header">Facturacion</th>
+                        <th class="table_header"></th>
+                    </tr>
+                </thead>
+
+                <!-- Creamos el cuerpo de la tabla que se agrega o elimina automaticamente -->
+                <tbody id="tablabody" class="table_body">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="./js/crud.js"></script>
+</body>
+
+</html>
+
+</html>
