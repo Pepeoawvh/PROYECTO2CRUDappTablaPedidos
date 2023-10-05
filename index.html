@@ -10,17 +10,17 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/estilos.css">
     <script type="text/javascript"></script>
-    <title>CRUD PP</title>
-
+    <title>CRUD aPP REGISTRO DE DATOS DE PEDIDOS DE STOCK</title>
 </head>
 
 <body>
     <main class="contenedor">
         <section class="crud">
             <h1 class="titulocrud">Registro de Pedidos de Stock</h1>
+            <button type="submit" id="botonAdd" class="botonadd"></button>
 
             <!-- Formulario 1 Pedidos stock, etiquetas con id -->
-            <form id="formRegistro" class="formucrud">
+            <form id="formRegistro" class="formucrud hidden">
                 <select place id="entradainput" class="formInput">
                     <option style="color: rgb(176, 176, 176);" value="">Origen del pedido</option>
                     <option value="Web">Web</option>
@@ -28,8 +28,10 @@
                     <option value="Administrador">Administrador</option>
                 </select>
                 <input type="date" id="fechainput" class="formInput">
-                <input type="text" placeholder="Número de Pedido"id="codigoinput" class="formInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-                <input type="text" placeholder="Nombre Cliente" id="nameinput" class="formInput" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');">
+                <input type="text" placeholder="Número de Pedido" id="codigoinput" class="formInput"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <input type="text" placeholder="Nombre Cliente" id="nameinput" class="formInput"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
                 <input type="number" placeholder="Cantidad" id="numinput" class="formInput">
                 <input type="text" placeholder="Producto" id="productinput" class="formInput">
                 <select place id="envioinput" class="formInput">
@@ -50,12 +52,9 @@
                 </select>
 
                 <!-- Este botón tiene una clase general "button" y agregamos modificadores como button--primary -->
-                <button type="submit" id="submitbutton" class="button botonEnviar">
-                     <!-- <img src="./public/assets/img/save.png" alt="send">  -->
-                    </button>
+                <button type="submit" id="submitbutton" class="button botonEnviar"></button>
             </form>
 
-            <div id="mensajeValidacion" class="mensaje-validacion"></div>
             <!-- Creamos una tabla para que se visualicen los datos -->
             <table class="crudtable">
                 <thead>
@@ -71,7 +70,6 @@
                         <th class="table_header"></th>
                     </tr>
                 </thead>
-
                 <!-- Creamos el cuerpo de la tabla que se agrega o elimina automaticamente -->
                 <tbody id="tablabody" class="table_body">
                 </tbody>

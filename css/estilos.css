@@ -5,6 +5,8 @@
 
 .crud {
 display: grid;
+grid-template-rows: 0.1fr 0.1fr 0.2fr 1fr;
+grid-template-columns: 1fr;
 }
 
 .titulocrud {
@@ -54,9 +56,30 @@ display: grid;
 
 
 /* Estilos especificos a "botón "primary" pero conserva propiedades del botón general "padre" */
+.botonadd {
+    background-color: white;
+    background-image: url(/PROYECTO2CRUDAPP/public/assets/img/add.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-self: center;
+    border: none;
+    border-radius: 100px;
+    height: 70px;
+    width: 70px;
+    transition: transform 0.6s;
+    margin-bottom: 15px;
+}
+.botonadd:hover{
+cursor: pointer;   
+transform: scale(1.1); 
+}
+.hidden{
+    display: none;
+}
 .botonEnviar {
     background-color: aquamarine;
-    background-image: url(/proyecto2/public/assets/img/save.png);
+    background-image: url(/PROYECTO2CRUDAPP/public/assets/img/save.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,7 +89,7 @@ display: grid;
 }
 
 .botonEliminar {
-    background-image: url(/proyecto2/public/assets/img/delete.png);
+    background-image: url(/PROYECTO2CRUDAPP/public/assets/img/delete.png);
     background-size: contain;
     width: 50px;
     height: 50px;
@@ -75,7 +98,7 @@ display: grid;
 }
 
 .botonEditar {
-    background-image: url(/proyecto2/public/assets/img/edit.png);
+    background-image: url(/PROYECTO2CRUDAPP/public/assets/img/edit.png);
     background-size: contain;
     width: 50px;
     height: 50px;

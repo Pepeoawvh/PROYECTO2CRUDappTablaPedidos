@@ -1,4 +1,16 @@
-window.onload = loadDataFromLocalStorage;
+
+const botonAdd=document.getElementById("botonAdd")
+const ocultarFormulario =document.getElementById("formRegistro")
+
+function togglemenu() {
+   ocultarFormulario.classList.toggle('hidden')
+}
+
+botonAdd.addEventListener("click",togglemenu);
+
+
+
+
 
 //se adquieren elementos DOM donde se encuentran los datos del pedido:
 const form = document.getElementById('formRegistro');
@@ -37,40 +49,39 @@ form.addEventListener('submit', function (event) {
     const product = productinput.value;
     const envio = envioinput.value;
     const factura = facturainput.value;
-if (entrada == ""){
-    alert('seleccione Origen de pedido');
-    return false; 
-}
-if (fecha == ""){
-    alert("Ingrese Fecha");
-    return false;
-}
-if (codigo == ""){
-    alert("Ingrese Codigo de producto");
-    return false;
-}
-if (name == ""){
-    alert("Ingrese Nombre de Cliente");
-    return false;
-}
-if (num == ""){
-    alert("Ingrese Cantidad del producto");
-    return false;
-}
-if (product == ""){
-    alert("Ingrese Nombre del producto");
-    return false;
-}
-if (envio == ""){
-    alert("Ingrese Metodo de envio");
-    return false;
-}
 
-if (factura == ""){
-    alert("Ingrese Metodo de facturacion");
-    return false;
-}
-
+    if (entrada == "") {
+        alert('seleccione Origen de pedido');
+        return false;
+    }
+    if (fecha == "") {
+        alert("Ingrese Fecha");
+        return false;
+    }
+    if (codigo == "") {
+        alert("Ingrese Codigo de producto");
+        return false;
+    }
+    if (name == "") {
+        alert("Ingrese Nombre de Cliente");
+        return false;
+    }
+    if (num == "") {
+        alert("Ingrese Cantidad del producto");
+        return false;
+    }
+    if (product == "") {
+        alert("Ingrese Nombre del producto");
+        return false;
+    }
+    if (envio == "") {
+        alert("Ingrese Metodo de envio");
+        return false;
+    }
+    if (factura == "") {
+        alert("Ingrese Metodo de facturacion");
+        return false;
+    }
     if (entrada && fecha && codigo && name && num && product && envio && factura) {
         const newData = { entrada, fecha, codigo, name, num, product, envio, factura };
         data.push(newData);
@@ -84,36 +95,15 @@ if (factura == ""){
     }
 })
 
-// // Obtén una referencia al elemento del mensaje de validación
-// const mensajeValidacion = document.getElementById('mensajeValidacion');
-
-// // Función para mostrar un mensaje de validación
-// function mostrarMensajeValidacion(mensaje) {
-//   mensajeValidacion.textContent = mensaje;
-//   mensajeValidacion.style.display = 'block'; // Muestra el mensaje
-// }
-
-// // Función para ocultar el mensaje de validación
-// function ocultarMensajeValidacion() {
-//   mensajeValidacion.textContent = '';
-//   mensajeValidacion.style.display = 'none'; // Oculta el mensaje
-// }
-
-// // Ejemplo de uso:
-// if (!codigoValido) {
-//   mostrarMensajeValidacion('El código debe contener solo dígitos.');
-// } else {
-//   ocultarMensajeValidacion();
-// }
-
 //Función para guardar los datos del formulario:
 function saveDataToLocalStorage() {
     localStorage.setItem('formData', JSON.stringify(data));
 }
 
-//Función para renderizar o actualizar el formulario, limpia el contenido de la tabla para nuevo registro:
-function renderTable(sortOrder = 'asc') {
 
+//Función para renderizar o actualizar el formulario, limpia el contenido de la tabla para nuevo registro:
+function renderTable() {
+    tablabody.innerHTML = '';
 
     //Para generar todos los registros del formulario en una tabla necesitamos iterar el "data" (toda la información) y crear la tabla
     // compuesta de un item e index, cada elemento tendrá su puesto en la tabla.
@@ -131,21 +121,10 @@ function renderTable(sortOrder = 'asc') {
 
         // boton editar
         const botonEditar = document.createElement('button')
-        // botonEditar.textContent = 'Editar';
-        botonEditar.classList.add('button', 'botonEditar');
-        botonEditar.addEventListener('click', function () {
-            editData(index);
-        })
-        actionCell.appendChild(botonEditar);
-        // boton eliminar
         const botonEliminar = document.createElement('button')
-        // botonEliminar.textContent = 'Eliminar';
-        botonEliminar.classList.add('button', 'botonEliminar');
-        botonEliminar.addEventListener('click', function () {
-            deleteData(index);
-        })
-        actionCell.appendChild(botonEliminar);
-        // Agregamos el contenido de la celda, texto para name y email.
+
+        // Agregamos el contenido de la celda
+
         entradaCell.textContent = item.entrada;
         fechaCell.textContent = item.fecha;
         codigoCell.textContent = item.codigo;
@@ -155,7 +134,21 @@ function renderTable(sortOrder = 'asc') {
         envioCell.textContent = item.envio;
         facturaCell.textContent = item.factura;
 
+//  Botones de eliminar y editar
+        botonEditar.classList.add('button', 'botonEditar');
+        botonEliminar.classList.add('button', 'botonEliminar');
 
+        // llama a la funcion editData al ocurrir el evento click en su boton respectivo
+        botonEditar.addEventListener('click', function () {
+            editData(index);
+        })
+// lo mismo para deleteData
+        botonEliminar.addEventListener('click', function () {
+            deleteData(index);
+        })
+// se agregan los botones al documento
+        actionCell.appendChild(botonEditar);
+        actionCell.appendChild(botonEliminar);
 
         // Creamos las filas o celdas para los textos que capture en la data:
         row.appendChild(entradaCell);
@@ -168,14 +161,11 @@ function renderTable(sortOrder = 'asc') {
         row.appendChild(facturaCell);
         row.appendChild(actionCell);
 
-
         // Creamos las filas para tablabody
         tablabody.appendChild(row);
 
     })
 }
-
-
 
 function editData(index) {
     const item = data[index];
@@ -192,22 +182,12 @@ function editData(index) {
     renderTable();
 }
 
-
 function deleteData(index) {
     data.splice(index, 1);
     saveDataToLocalStorage();
     renderTable();
 }
-renderTable();
 
-function loadDataFromLocalStorage() {
-    const dataString = localStorage.getItem('formData');
-    if (dataString) {
-        data = JSON.parse(dataString);
-        renderTable(); // Llama a la función para renderizar la tabla con los datos cargados
-    } else {
-        renderTable(); // Si no hay datos en el almacenamiento local, también se mostrará una tabla vacía
-    }
-}
-  
-  // Llama a la función al cargar la página
+
+renderTable();
+// window.onload = loadDataFromLocalStorage;
