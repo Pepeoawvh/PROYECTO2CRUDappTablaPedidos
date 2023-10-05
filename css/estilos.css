@@ -7,11 +7,16 @@
 display: grid;
 grid-template-rows: 0.1fr 0.1fr 0.2fr 1fr;
 grid-template-columns: 1fr;
+/* background-color: #fde9f2; */
+/* background-image: url(/PROYECTO2CRUDAPP/public/assets/img/BlueTrianglePattern.jpg); */
+background-repeat: no-repeat;
+background-size: cover;
+padding-bottom: 40px;
 }
 
 .titulocrud {
     text-align: center;
-    color: rgb(100, 100, 114);
+    color: rgb(100, 100, 114,);
 
 }
 
@@ -69,6 +74,9 @@ grid-template-columns: 1fr;
     width: 70px;
     transition: transform 0.6s;
     margin-bottom: 15px;
+}
+.titulocrud{
+    /* background-image: url(/PROYECTO2CRUDAPP/public/assets/img/ShellHandwritingCanvas.jpg); */
 }
 .botonadd:hover{
 cursor: pointer;   
