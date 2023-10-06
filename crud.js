@@ -7,7 +7,6 @@ function togglemenu() {
 }
 
 botonAdd.addEventListener("click",togglemenu);
-ocultarFormulario.style.opacity = '1';
 
 
 
@@ -67,7 +66,7 @@ form.addEventListener('submit', function (event) {
         alert("Ingrese Nombre de Cliente");
         return false;
     }
-    if (num == "") {
+    if (num == "0" || num == "") {
         alert("Ingrese Cantidad del producto");
         return false;
     }
