@@ -16,7 +16,8 @@ body {
     grid-template-rows: 70px;
     background-color: #fff3d1;
     border-color: #ffc107;
-    border-style: solid;
+    border-style:solid;
+    border-width: 1.3px;
     height: 70px;
     border-top: none;
     border-left: none;
