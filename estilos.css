@@ -13,7 +13,7 @@ body {
 .navbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 70px;
     background-color: #fff3d1;
     border-color: #ffc107;
     border-style: solid;
@@ -21,6 +21,37 @@ body {
     border-top: none;
     border-left: none;
     border-right: none;
+    align-items: center;
+    justify-items: center;
+    font-size: 1vw;
+}
+
+.navitem:hover {
+    cursor: pointer;
+}
+.slot1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+}
+
+.logofalso{
+    width: 70px;
+    height: 70px;
+    /* box-sizing: border-box; */
+    padding: 10px;
+
+}
+.textlogo{
+    /* font-size: 15px; */
+    padding: 10px;
+}
+.slot7{
+    display: grid;
+    grid-template-rows: 1fr 0.3fr;
+    text-align: center;
+    align-items: center;
 }
 .crud {
     display: grid;
@@ -34,6 +65,7 @@ body {
     color: rgb(100, 100, 114, );
     font-size: 50px;
     font-weight: 700;
+    padding-top: 20px;
 
 }
 
@@ -166,7 +198,21 @@ body {
     .contenedor {
         padding: 10px;
     }
-
+    .logofalso{
+        padding: 5px;
+    
+    }
+    .textlogo{
+        font-size: 12px;
+    }
+    .navitem{
+        font-size: 11px ;
+        padding: 5px;
+    }
+    .userfake{
+        width:35px ;
+        height: 35px;
+    }
     .titulocrud {
         text-align: center;
         color: rgb(100, 100, 114, );
