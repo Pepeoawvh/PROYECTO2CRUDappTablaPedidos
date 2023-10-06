@@ -29,29 +29,37 @@ body {
 .navitem:hover {
     cursor: pointer;
 }
-.slot1{
+
+.slot1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
     align-items: center;
 }
 
-.logofalso{
+.logofalso {
     width: 70px;
     height: 70px;
     /* box-sizing: border-box; */
     padding: 10px;
 
 }
-.textlogo{
+
+.textlogo {
     /* font-size: 15px; */
     padding: 10px;
 }
-.slot7{
+
+.slot7 {
     display: grid;
     grid-template-rows: 1fr 0.3fr;
     text-align: center;
     align-items: center;
+}
+.userfake {
+    justify-self: center;
+    width: 35px;
+    height: 35px;
 }
 .crud {
     display: grid;
@@ -198,21 +206,26 @@ body {
     .contenedor {
         padding: 10px;
     }
-    .logofalso{
+
+    .logofalso {
         padding: 5px;
-    
+
     }
-    .textlogo{
+
+    .textlogo {
         font-size: 12px;
     }
-    .navitem{
-        font-size: 11px ;
+
+    .navitem {
+        font-size: 11px;
         padding: 5px;
     }
-    .userfake{
-        width:35px ;
+
+    .userfake {
+        width: 35px;
         height: 35px;
     }
+
     .titulocrud {
         text-align: center;
         color: rgb(100, 100, 114, );
