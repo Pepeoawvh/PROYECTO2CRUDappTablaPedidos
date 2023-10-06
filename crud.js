@@ -185,6 +185,5 @@ function deleteData(index) {
     renderTable();
 }
 
-
 renderTable();
 // window.onload = loadDataFromLocalStorage;
