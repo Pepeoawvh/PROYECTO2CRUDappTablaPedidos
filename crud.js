@@ -1,15 +1,12 @@
 
-const botonAdd=document.getElementById("botonAdd")
-const ocultarFormulario =document.getElementById("formRegistro")
-const botonguarda=document.getElementById('submitbutton')
+const botonAdd = document.getElementById("botonAdd")
+const ocultarFormulario = document.getElementById("formRegistro")
+const botonguarda = document.getElementById('submitbutton')
 function togglemenu() {
-   ocultarFormulario.classList.toggle('hidden')
+    ocultarFormulario.classList.toggle('hidden')
 }
 
-botonAdd.addEventListener("click",togglemenu);
-
-
-
+botonAdd.addEventListener("click", togglemenu);
 
 
 //se adquieren elementos DOM donde se encuentran los datos del pedido:
@@ -134,7 +131,7 @@ function renderTable() {
         envioCell.textContent = item.envio;
         facturaCell.textContent = item.factura;
 
-//  Botones de eliminar y editar
+        //  Botones de eliminar y editar
         botonEditar.classList.add('button', 'botonEditar');
         botonEliminar.classList.add('button', 'botonEliminar');
 
@@ -142,11 +139,11 @@ function renderTable() {
         botonEditar.addEventListener('click', function () {
             editData(index);
         })
-// lo mismo para deleteData
+        // lo mismo para deleteData
         botonEliminar.addEventListener('click', function () {
             deleteData(index);
         })
-// se agregan los botones al documento
+        // se agregan los botones al documento
         actionCell.appendChild(botonEditar);
         actionCell.appendChild(botonEliminar);
 
