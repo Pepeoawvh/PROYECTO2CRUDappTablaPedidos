@@ -8,8 +8,8 @@
 
 ## 1. Introduccion
 
-Este proyecto es parte de la segunda entrega del Bootcamp UDD, un programa intensivo de aprendizaje de desarrollo web.
-El objetivo es crear una aplicación web que permita gestionar los pedidos de una empresa, usando las tecnologías HTML, CSS y JavaScript.
+Este proyecto es parte de la segunda entrega del Bootcamp UDD Desarrollo Web Full Stack, un programa intensivo de aprendizaje de desarrollo web.
+El objetivo es crear una aplicación CRUD, usando las tecnologías HTML, CSS y JavaScript.
 
 ****
 
