@@ -1,10 +1,24 @@
 # Registro de Pedidos
 
-## Introducción
+
+* [1. Intro](#1-introduccion)
+* [2. Vinculo](#2-vinculo)
+* [3. Descripcion](#3-descripcion)
+* [4. Aprendizajes Obtenidos](#4-aprendizajes-obtenidos)
+
+## 1. Introduccion
+
 Este proyecto es parte de la segunda entrega del Bootcamp UDD, un programa intensivo de aprendizaje de desarrollo web.
 El objetivo es crear una aplicación web que permita gestionar los pedidos de una empresa, usando las tecnologías HTML, CSS y JavaScript.
 
-## Presentación del proyecto
+****
+
+## 2. Vinculo
+[Enlace] (https://pepeoawvh.github.io/PROYECTO2CRUDappTablaPedidos/)
+
+****
+
+## 3. Descripcion
 
 La aplicación se llama "Registro de Pedidos para pymes" y consiste en una interfaz sencilla y funcional que permite al usuario realizar 
 las operaciones CRUD (Create, Read, Update, Delete) sobre los datos de los pedidos. La aplicación Almacena los datos en LocalStorage.
@@ -19,6 +33,7 @@ las operaciones CRUD (Create, Read, Update, Delete) sobre los datos de los pedid
 
 - Eliminar un pedido existente, haciendo clic en el botón "Eliminar" correspondiente a cada fila de la tabla y confirmando la acción.
 
+![Prototipo](./public/assets/prototipo_simple/esquema.jpg)
  
 ## Contexto de uso
 
@@ -29,9 +44,10 @@ su estado, su origen y su destino. Además, facilita la actualización y el borr
 La aplicación puede adaptarse a diferentes tipos de empresas, cambiando los campos del formulario y de la tabla según los datos que se quieran registrar. 
 Por ejemplo, se podría agregar un campo para el tipo de producto o servicio, el precio, la cantidad, el descuento, etc.
 
- 
+****
 
-## Conocimientos adquiridos
+## 4. Aprendizajes Obtenidos 
+
 
 Durante el desarrollo de este proyecto, se adquirieron diversos conocimientos sobre HTML, CSS y JavaScript, 
 que se aplicaron en la creación de la aplicación. Algunos de estos conocimientos son:
@@ -49,8 +65,6 @@ que se aplicaron en la creación de la aplicación. Algunos de estos conocimient
 - Se usó el objeto `window` para acceder a propiedades y métodos globales, como `alert()`, `confirm()`, `localStorage()`, etc.
   
 
- 
-
 ## Conclusión
 Este proyecto fue una gran oportunidad para poner en práctica los conocimientos adquiridos durante el MODULO 1, 
 así como para aprender nuevos conceptos y herramientas. El desarrollo de una aplicación web que cumple con las operaciones CRUD fue un reto interesante y gratificante, 
@@ -61,6 +75,7 @@ Se pudo apreciar la importancia de tener una buena base teórica, pero también 
 Se pudo comprobar la utilidad y el potencial de las tecnologías HTML, CSS y JavaScript, para crear aplicaciones web funcionales y atractivas.
 
  
-
 Finalmente, se puede decir que este proyecto fue una experiencia enriquecedora, que contribuyó al crecimiento profesional y personal, 
 y que abrió las puertas a nuevas posibilidades y oportunidades en el campo del desarrollo web.
+
+****
