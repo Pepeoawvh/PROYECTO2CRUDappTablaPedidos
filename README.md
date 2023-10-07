@@ -8,7 +8,7 @@
 
 ## 1. Introduccion
 
-Este proyecto es parte de la segunda entrega dek MODULO 1 del Bootcamp UDD Desarrollo Web Full Stack, un programa intensivo de aprendizaje de desarrollo web.
+Este proyecto es parte de la segunda entrega del MODULO 1 del Bootcamp UDD Desarrollo Web Full Stack, un programa intensivo de aprendizaje de desarrollo web.
 El objetivo es crear una aplicación CRUD, usando las tecnologías HTML, CSS y JavaScript.
 
 ****
