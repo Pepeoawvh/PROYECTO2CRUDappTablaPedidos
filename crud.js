@@ -1,12 +1,18 @@
-
+// se obtienen elementos del documento
 const botonAdd = document.getElementById("botonAdd")
 const ocultarFormulario = document.getElementById("formRegistro")
 const botonguarda = document.getElementById('submitbutton')
+// esta funcion activa y desactiva el estilo de la clase 'hidden' 
 function togglemenu() {
     ocultarFormulario.classList.toggle('hidden')
 }
-
+// se escucha la accion click en el botonAdd y se llama a la funcion togglemenu que activa y desactiva la clase hidden
 botonAdd.addEventListener("click", togglemenu);
+
+// anula el uso de boton secundario del  mouse
+document.oncontextmenu = function () {
+    return false;
+}
 
 
 //se adquieren elementos DOM donde se encuentran los datos del pedido:
@@ -24,20 +30,18 @@ const facturainput = document.getElementById('facturainput');
 const tablabody = document.getElementById('tablabody');
 
 // Para almacenar estos datos en el localStore, al actualizar, no se borre la info:
-// Se crea una variable "let" que es dinamica, con el nombre "data" porque será nuestra base de datos
+// Se crea una variable "let" que es dinamica, con el nombre "data"
 // Json.parse porque esos datos los adquirimos y convertimos en objetos almacenables como los arrays
 // Guardamos en localStore en el navegador bajo la función formData() que son los datos de nuestro formulario:
 
 let data = JSON.parse(localStorage.getItem('formData')) || [];
 
 //funcion para que al evento "submit" (click al boton agregar), almacene la información en memoria
-
-
 form.addEventListener('submit', function (event) {
 
     //elimina comportamientos por defecto del formulario
     event.preventDefault();
-
+// se almacenan los valores  de las entradas en constantes
     const entrada = entradainput.value;
     const fecha = fechainput.value;
     const codigo = codigoinput.value;
@@ -47,6 +51,7 @@ form.addEventListener('submit', function (event) {
     const envio = envioinput.value;
     const factura = facturainput.value;
 
+    // condiciones para avisar mediante alert si falta alguno de los campos por rellenar
     if (entrada == "") {
         alert('seleccione Origen de pedido');
         return false;
@@ -79,31 +84,33 @@ form.addEventListener('submit', function (event) {
         alert("Ingrese Metodo de facturacion");
         return false;
     }
+    // si todos los valores estan presentes, se guardan en LocalStorage y se actualiza la tabla
     if (entrada && fecha && codigo && name && num && product && envio && factura) {
         const newData = { entrada, fecha, codigo, name, num, product, envio, factura };
         data.push(newData);
         saveDataToLocalStorage();
         renderTable();
 
-        //Función para borrar y volver a iniciar de JavaScript no se necesita crear
+        //Función para borrar y volver a iniciar el formulario
         form.reset();
     } else {
+        // si no hay ninguna informacion se lanza este alert
         alert('Se necesita toda la informacion del pedido');
     }
 })
 
-//Función para guardar los datos del formulario:
+//se declara la Función saveDataToLocalStorage para guardar los datos del formulario:
 function saveDataToLocalStorage() {
     localStorage.setItem('formData', JSON.stringify(data));
 }
 
 
-//Función para renderizar o actualizar el formulario, limpia el contenido de la tabla para nuevo registro:
+//se declara la Función renderTable para renderizar o actualizar el formulario
 function renderTable() {
     tablabody.innerHTML = '';
 
-    //Para generar todos los registros del formulario en una tabla necesitamos iterar el "data" (toda la información) y crear la tabla
-    // compuesta de un item e index, cada elemento tendrá su puesto en la tabla.
+ //Para generar todos los registros del formulario en una tabla se itera el "data" (toda la información) y se crea la tabla
+ // compuesta de un item e index, cada
     data.forEach(function (item, index) {
         const row = document.createElement('tr');
         const entradaCell = document.createElement('td');
